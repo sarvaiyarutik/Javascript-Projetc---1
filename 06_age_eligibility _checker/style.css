@@ -1,0 +1,187 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Trebuchet MS',sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#050505;
+    overflow:hidden;
+}
+
+/* Animated Golden Lights */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:radial-gradient(gold,transparent 70%);
+    top:-250px;
+    left:-250px;
+    filter:blur(100px);
+    animation:move1 8s infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:radial-gradient(#ff9900,transparent 70%);
+    bottom:-250px;
+    right:-250px;
+    filter:blur(100px);
+    animation:move2 8s infinite alternate;
+}
+
+@keyframes move1{
+    to{
+        transform:translate(180px,120px);
+    }
+}
+
+@keyframes move2{
+    to{
+        transform:translate(-180px,-120px);
+    }
+}
+
+.container{
+    position:relative;
+    z-index:10;
+}
+
+form{
+    width:430px;
+    padding:40px;
+    border-radius:30px;
+    background:rgba(20,20,20,.9);
+    border:2px solid gold;
+    box-shadow:0 0 40px rgba(255,215,0,.4);
+    animation:show .8s ease;
+}
+
+@keyframes show{
+
+from{
+opacity:0;
+transform:scale(.7);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+h2{
+    color:gold;
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:30px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 5px gold;
+}
+
+to{
+text-shadow:0 0 25px gold;
+}
+
+}
+
+label{
+    color:white;
+    font-size:18px;
+    display:block;
+    margin-bottom:10px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:2px solid gold;
+    background:transparent;
+    border-radius:12px;
+    color:white;
+    font-size:17px;
+    outline:none;
+    transition:.4s;
+}
+
+input::placeholder{
+color:#bbb;
+}
+
+input:focus{
+box-shadow:0 0 20px gold;
+transform:scale(1.04);
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#ffd700,#ff9900);
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.4s;
+}
+
+button:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px gold;
+}
+
+#result{
+    margin-top:25px;
+    text-align:center;
+    color:#00ff66;
+    font-size:24px;
+    font-weight:bold;
+    animation:result 1s infinite alternate;
+}
+
+@keyframes result{
+
+from{
+transform:scale(1);
+text-shadow:0 0 8px #00ff66;
+}
+
+to{
+transform:scale(1.08);
+text-shadow:0 0 25px #00ff66;
+}
+
+}
+
+@media(max-width:500px){
+
+form{
+width:90vw;
+padding:25px;
+}
+
+h2{
+font-size:24px;
+}
+
+}

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cinzel',serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#0d0d0d;
+    overflow:hidden;
+}
+
+/* Golden Lights */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#ffd70033,transparent 70%);
+    top:-150px;
+    left:-150px;
+    animation:move1 8s infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#ffae0033,transparent 70%);
+    bottom:-150px;
+    right:-150px;
+    animation:move2 8s infinite alternate;
+}
+
+@keyframes move1{
+    to{
+        transform:translate(180px,120px);
+    }
+}
+
+@keyframes move2{
+    to{
+        transform:translate(-180px,-120px);
+    }
+}
+
+/* Main Card */
+
+form{
+    width:430px;
+    background:#111;
+    padding:40px;
+    border-radius:20px;
+    position:relative;
+    z-index:1;
+    border:2px solid gold;
+    box-shadow:
+    0 0 20px gold,
+    0 0 50px rgba(255,215,0,.3);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+h2{
+    color:gold;
+    text-align:center;
+    margin-bottom:30px;
+    font-size:30px;
+    letter-spacing:2px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    background:#1a1a1a;
+    color:white;
+    border:2px solid gold;
+    border-radius:10px;
+    outline:none;
+    font-size:18px;
+    transition:.4s;
+}
+
+input:focus{
+    box-shadow:0 0 20px gold;
+    transform:scale(1.03);
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    background:gold;
+    color:black;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.4s;
+}
+
+button:hover{
+    background:#fff4b0;
+    transform:scale(1.05);
+    box-shadow:0 0 25px gold;
+}
+
+#result{
+    margin-top:25px;
+    padding:15px;
+    border:1px solid gold;
+    border-radius:10px;
+    color:#fff;
+    font-size:22px;
+    text-align:center;
+    line-height:35px;
+    background:#1b1b1b;
+    animation:shine 1.5s infinite alternate;
+}
+
+@keyframes shine{
+
+from{
+box-shadow:0 0 10px gold;
+}
+
+to{
+box-shadow:0 0 30px gold;
+}
+
+}

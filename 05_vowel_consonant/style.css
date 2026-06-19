@@ -1,0 +1,252 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Verdana,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#020617;
+    overflow:hidden;
+}
+
+/* Animated background */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    background:conic-gradient(
+        cyan,
+        blue,
+        purple,
+        hotpink,
+        cyan
+    );
+    animation:rotate 12s linear infinite;
+    filter:blur(180px);
+    opacity:.4;
+}
+
+@keyframes rotate{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.container{
+    position:relative;
+    z-index:2;
+}
+
+form{
+    position:relative;
+    width:430px;
+    padding:40px;
+    border-radius:30px;
+    background:#09111f;
+    overflow:hidden;
+}
+
+/* Animated Border */
+
+form::before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    background:linear-gradient(
+    45deg,
+    cyan,
+    blue,
+    deeppink,
+    yellow,
+    lime,
+    cyan
+    );
+    background-size:500%;
+    animation:borderMove 6s linear infinite;
+    z-index:-2;
+}
+
+form::after{
+    content:"";
+    position:absolute;
+    inset:3px;
+    background:#09111f;
+    border-radius:28px;
+    z-index:-1;
+}
+
+@keyframes borderMove{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:500%;
+}
+
+}
+
+h2{
+    color:white;
+    text-align:center;
+    font-size:34px;
+    margin-bottom:30px;
+    letter-spacing:2px;
+    animation:textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow{
+
+from{
+text-shadow:0 0 5px cyan;
+}
+
+to{
+text-shadow:0 0 30px cyan;
+}
+
+}
+
+label{
+    display:block;
+    color:white;
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#111827;
+    color:white;
+    font-size:17px;
+    transition:.4s;
+}
+
+input::placeholder{
+color:#999;
+}
+
+input:focus{
+transform:scale(1.05);
+box-shadow:0 0 20px cyan;
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(90deg,cyan,#7c3aed,#ff0080);
+    background-size:300%;
+    animation:buttonMove 5s linear infinite;
+    transition:.4s;
+}
+
+@keyframes buttonMove{
+
+100%{
+background-position:300%;
+}
+
+}
+
+button:hover{
+transform:translateY(-5px) scale(1.03);
+box-shadow:0 0 30px cyan;
+}
+
+#result{
+    margin-top:25px;
+    text-align:center;
+    color:#00ff99;
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:2px;
+    animation:resultGlow 1s infinite alternate;
+}
+
+@keyframes resultGlow{
+
+from{
+transform:scale(1);
+text-shadow:0 0 10px lime;
+}
+
+to{
+transform:scale(1.08);
+text-shadow:0 0 30px lime,
+            0 0 60px lime;
+}
+
+}
+
+/* Floating particles */
+
+.container::before,
+.container::after{
+content:"";
+position:absolute;
+width:20px;
+height:20px;
+border-radius:50%;
+background:cyan;
+box-shadow:0 0 30px cyan;
+animation:float 5s infinite ease-in-out;
+}
+
+.container::before{
+left:-40px;
+top:20%;
+}
+
+.container::after{
+right:-40px;
+bottom:20%;
+animation-delay:2s;
+}
+
+@keyframes float{
+
+50%{
+transform:translateY(-100px) scale(1.8);
+opacity:.3;
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+@media(max-width:500px){
+
+form{
+width:92vw;
+padding:25px;
+}
+
+h2{
+font-size:26px;
+}
+
+}
+

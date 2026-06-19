@@ -1,0 +1,168 @@
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Consolas,monospace;
+    }
+
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        background:#050505;
+        overflow:hidden;
+    }
+
+    /* Moving Grid */
+
+    body::before{
+        content:"";
+        position:absolute;
+        width:200%;
+        height:200%;
+        background-image:
+        linear-gradient(rgba(0,255,120,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,255,120,.08) 1px,transparent 1px);
+        background-size:40px 40px;
+        transform:rotate(25deg);
+        animation:grid 12s linear infinite;
+    }
+
+    @keyframes grid{
+
+    100%{
+    transform:rotate(25deg) translateY(40px);
+    }
+
+    }
+
+    /* Main Card */
+
+    .container{
+        position:relative;
+        z-index:10;
+    }
+
+    form{
+        width:450px;
+        padding:35px;
+        background:#07120d;
+        border:2px solid #00ff88;
+        position:relative;
+        box-shadow:
+        0 0 15px #00ff88,
+        inset 0 0 20px rgba(0,255,136,.2);
+    }
+
+    /* Corner Design */
+
+    form::before{
+        content:"";
+        position:absolute;
+        top:-8px;
+        left:-8px;
+        width:40px;
+        height:40px;
+        border-top:4px solid #00ff88;
+        border-left:4px solid #00ff88;
+    }
+
+    form::after{
+        content:"";
+        position:absolute;
+        bottom:-8px;
+        right:-8px;
+        width:40px;
+        height:40px;
+        border-bottom:4px solid #00ff88;
+        border-right:4px solid #00ff88;
+    }
+
+    h1{
+        color:#00ff88;
+        text-align:center;
+        margin-bottom:30px;
+        font-size:28px;
+        text-transform:uppercase;
+        letter-spacing:2px;
+    }
+
+    label{
+        color:#00ff88;
+        font-size:18px;
+        display:block;
+        margin-bottom:10px;
+    }
+
+    input{
+        width:100%;
+        padding:15px;
+        background:#000;
+        border:2px solid #00ff88;
+        color:#00ff88;
+        font-size:18px;
+        outline:none;
+        transition:.3s;
+    }
+
+    input:focus{
+        box-shadow:0 0 20px #00ff88;
+    }
+
+    button{
+        width:100%;
+        margin-top:20px;
+        padding:15px;
+        background:#00ff88;
+        border:none;
+        color:#000;
+        font-size:18px;
+        font-weight:bold;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    button:hover{
+        background:#fff;
+        transform:scale(1.03);
+    }
+
+    #result{
+        margin-top:25px;
+        padding:15px;
+        text-align:center;
+        border:1px dashed #00ff88;
+        color:#00ff88;
+        font-size:24px;
+        font-weight:bold;
+        min-height:60px;
+    }
+
+    /* Blinking Cursor */
+
+    #result::after{
+        content:"_";
+        animation:blink .8s infinite;
+    }
+
+    @keyframes blink{
+
+    50%{
+    opacity:0;
+    }
+
+    }
+
+    @media(max-width:500px){
+
+    form{
+        width:92%;
+        padding:25px;
+    }
+
+    h1{
+        font-size:22px;
+    }
+
+    }

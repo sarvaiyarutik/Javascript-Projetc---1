@@ -1,0 +1,169 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#0b0f1a;
+    overflow:hidden;
+}
+
+/* Road Effect */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:8px;
+    background:repeating-linear-gradient(
+    90deg,
+    white 0 40px,
+    transparent 40px 80px
+    );
+    bottom:80px;
+    animation:road 2s linear infinite;
+}
+
+@keyframes road{
+    from{
+        background-position:0;
+    }
+    to{
+        background-position:80px;
+    }
+}
+
+h1{
+    color:white;
+    margin-bottom:40px;
+    font-size:40px;
+    text-shadow:0 0 20px cyan;
+}
+
+/* Signal Box */
+
+#red-btn,#yellow-btn,#green-btn{
+
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:none;
+    margin:15px;
+    font-size:22px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    transition:.4s;
+}
+
+/* Red */
+
+#red-btn{
+    background:#300;
+    box-shadow:0 0 20px red;
+}
+
+#red-btn:hover{
+    background:red;
+    box-shadow:
+    0 0 30px red,
+    0 0 70px red,
+    0 0 120px red;
+    transform:scale(1.1);
+}
+
+/* Yellow */
+
+#yellow-btn{
+    background:#443300;
+    box-shadow:0 0 20px gold;
+}
+
+#yellow-btn:hover{
+    background:yellow;
+    color:black;
+    box-shadow:
+    0 0 30px yellow,
+    0 0 70px yellow,
+    0 0 120px yellow;
+    transform:scale(1.1);
+}
+
+/* Green */
+
+#green-btn{
+    background:#003300;
+    box-shadow:0 0 20px lime;
+}
+
+#green-btn:hover{
+    background:lime;
+    color:black;
+    box-shadow:
+    0 0 30px lime,
+    0 0 70px lime,
+    0 0 120px lime;
+    transform:scale(1.1);
+}
+
+/* Result */
+
+#result{
+    margin-top:40px;
+    width:350px;
+    padding:20px;
+    text-align:center;
+    font-size:35px;
+    font-weight:bold;
+    color:white;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 30px cyan;
+    animation:pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.05);
+box-shadow:0 0 50px cyan;
+}
+
+}
+
+/* Floating Lights */
+
+body::after{
+content:"🔴 🟡 🟢";
+position:absolute;
+font-size:60px;
+top:-80px;
+animation:fall 10s linear infinite;
+opacity:.3;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateX(-100px);
+}
+
+100%{
+transform:translate(120vw,110vh);
+}
+
+}
+
