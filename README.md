@@ -13,7 +13,7 @@ A collection of beginner-friendly JavaScript projects using HTML, CSS & JavaScri
     <th>CodePen Link</th>
   </tr>
 
-  <tr><td>1</td><td>Even or Odd</td><td><a href="[https://codepen.io/your-work](https://codepen.io/sarvaiya-rutik/pen/ogBzjXr)">View</a></td></tr>
+  <tr><td>1</td><td>Even or Odd</td><td><a href="https://codepen.io/your-work](https://codepen.io/sarvaiya-rutik/pen/ogBzjXr">View</a></td></tr>
   <tr><td>2</td><td>Largest Number</td><td><a href="https://codepen.io/your-work">View</a></td></tr>
   <tr><td>3</td><td>Positive Negative Checker</td><td><a href="https://codepen.io/your-work">View</a></td></tr>
   <tr><td>4</td><td>Leap Year Checker</td><td><a href="https://codepen.io/your-work">View</a></td></tr>
