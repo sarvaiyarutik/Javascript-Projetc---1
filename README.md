@@ -36,6 +36,8 @@ A collection of beginner-friendly JavaScript projects using HTML, CSS & JavaScri
 
 </table>
 
+Video Link : https://drive.google.com/file/d/1UBpt6QwjxtgwaXw5LyDi2rc6JLw7m9Cb/view?usp=sharing
+
 ---
 
 <h2>🛠️ Technologies Used</h2>
